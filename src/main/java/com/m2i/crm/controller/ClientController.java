@@ -71,7 +71,7 @@ public class ClientController {
 	}
 	
 	@PutMapping("/modify/{id}")
-	public void putClient(@PathVariable int id, @RequestBody Client c) {
+	public void putClient(@PathVariable int id, @RequestBody @Valid Client c) {
 		cService.update(id, c);
 	}
 	

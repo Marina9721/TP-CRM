@@ -33,7 +33,7 @@ public class Order {
 	@NotBlank @NotEmpty(message="must enter a designation")
 	private String designation;
 	
-	@NotNull(message="must enter a number of days")
+	@Range(min=3, max=1000, message="nb of days should be between 3 and 1000")
 	private int nbDays;
 	
 	@Positive(message="unit price must be positive")
@@ -50,7 +50,7 @@ public class Order {
 		this.typePresta = f.lorem().word();
 		this.designation = f.lorem().sentence(3);
 		this.nbDays = f.number().numberBetween(1, 200);
-		this.unitPrice = f.number().numberBetween(1, 1000);
+		this.unitPrice = f.number().numberBetween(3, 1000);
 		this.state = f.number().numberBetween(0, 3);
 	}
 }
