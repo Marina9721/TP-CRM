@@ -34,7 +34,7 @@ public class OrderService {
 			order.setNbDays(o.getNbDays());
 			order.setUnitPrice(o.getUnitPrice());
 			order.setState(o.getState());
-			order.setClient(o.getClient());
+			//order.setClient(o.getClient());
 		}
 		oRepo.save(order);
 	}

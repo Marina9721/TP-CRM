@@ -13,6 +13,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 public class SwaggerConfig {
 	
+	// http://localhost:8080/swagger-ui/
+	
 	@Bean
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  

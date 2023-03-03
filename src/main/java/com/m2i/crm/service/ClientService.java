@@ -36,7 +36,7 @@ public class ClientService {
 			client.setPhone(c.getPhone());
 			client.setAddress(c.getAddress());
 			client.setZipCode(c.getZipCode());
-			client.setCity(c.getZipCode());
+			client.setCity(c.getCity());
 			client.setCountry(c.getCountry());
 			client.setState(c.getState());
 			cRepo.save(client);

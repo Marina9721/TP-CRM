@@ -61,9 +61,14 @@ public class OrderController {
 		return service.getById(id);
 	}
 	
-	@PostMapping("/create")
-	public void postOrder(@RequestBody @Valid Order o) {
-		service.create(o);	
+	@PostMapping("/create/{idClient}")
+	public void postOrder(@RequestBody @Valid Order o, @PathVariable int idClient) {
+		Client c = cRepo.findById(idClient).orElse(null);
+		if(c!=null) {
+			service.create(o);
+			c.getOrders().add(o);
+			cRepo.save(c);
+		}
 	}
 	
 	@PutMapping("/modify/{id}")
